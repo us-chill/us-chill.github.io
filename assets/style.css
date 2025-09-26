@@ -1,0 +1,45 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+
+header {
+  background: #002868;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+header .logo {
+  height: 50px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  background: #bf0a30;
+  color: white;
+  padding: 10px;
+}
+
+.video-card {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+}
