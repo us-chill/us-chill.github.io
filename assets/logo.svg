@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <!-- Lingkaran luar -->
+  <circle cx="150" cy="150" r="140" fill="url(#gradRing)" stroke="#000000" stroke-width="4"/>
+
+  <!-- Definisi gradasi -->
+  <defs>
+    <radialGradient id="gradRing" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#002868"/>
+      <stop offset="100%" stop-color="#FF0000"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Bintang di atas -->
+  <polygon points="150,30 158,55 185,55 162,70 170,95 150,80 130,95 138,70 115,55 142,55"
+           fill="#FFFFFF" stroke="#FF0000" stroke-width="3"/>
+
+  <!-- Teks utama -->
+  <text x="50%" y="60%" text-anchor="middle" dominant-baseline="middle"
+        font-family="Arial Black, sans-serif" font-size="48"
+        fill="#FFFFFF" stroke="#000000" stroke-width="2">
+    USChill
+  </text>
+
+  <!-- Garis dekorasi bawah -->
+  <rect x="60" y="200" width="180" height="10" rx="5" ry="5" fill="#FF0000"/>
+  <rect x="60" y="220" width="180" height="10" rx="5" ry="5" fill="#FFFFFF"/>
+  <rect x="60" y="240" width="180" height="10" rx="5" ry="5" fill="#002868"/>
+</svg>
