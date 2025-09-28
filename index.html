@@ -1,1 +1,84 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>USChill — Movies & News (USA)</title>
+  <meta name="description" content="USChill — news, movie picks and entertainment from the United States. Latest movies, reviews, and trending lists.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="USChill logo" class="logo">
+      <span class="brand-text">USChill</span>
+    </div>
+
+    <nav class="nav-right" id="navRight">
+      <a href="index.html">Home</a>
+      <a href="movies/movie1.html">Movies</a>
+      <a href="blog/article1.html">Blog</a>
+      <a href="about.html">About</a>
+      <input class="search" placeholder="Search...">
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>USChill — Your USA entertainment feed</h1>
+      <p>Latest Hollywood picks, city guides and trending stories from across the United States.</p>
+      <a class="cta" href="movies/movie1.html">Browse Movies</a>
+    </div>
+  </section>
+
+  <!-- LATEST -->
+  <main class="container">
+    <h2>Latest Picks</h2>
+    <div class="grid">
+      <!-- card 1 -->
+      <article class="card">
+        <a href="movies/movie1.html"><img src="https://picsum.photos/400/600?random=1" alt="Poster 1"></a>
+        <h3><a href="movies/movie1.html">Action Heroes</a></h3>
+        <p class="meta">Action · 2024</p>
+      </article>
+
+      <!-- card 2 -->
+      <article class="card">
+        <a href="movies/movie1.html"><img src="https://picsum.photos/400/600?random=2" alt="Poster 2"></a>
+        <h3><a href="movies/movie1.html">Love Untold</a></h3>
+        <p class="meta">Romance · 2023</p>
+      </article>
+
+      <!-- more cards -->
+      <article class="card">
+        <a href="movies/movie1.html"><img src="https://picsum.photos/400/600?random=3" alt="Poster 3"></a>
+        <h3><a href="movies/movie1.html">Comedy Night</a></h3>
+        <p class="meta">Comedy · 2022</p>
+      </article>
+
+      <article class="card">
+        <a href="movies/movie1.html"><img src="https://picsum.photos/400/600?random=4" alt="Poster 4"></a>
+        <h3><a href="movies/movie1.html">The Escape</a></h3>
+        <p class="meta">Thriller · 2021</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 USChill — About · Privacy · Contact</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menuBtn').addEventListener('click', function(){
+      document.getElementById('navRight').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
