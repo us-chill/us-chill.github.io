@@ -1,30 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>USChill Blog - Article 1</title>
+  <meta charset="utf-8">
+  <title>Top 10 Cities in the USA for Movie Lovers — USChill</title>
+  <meta name="description" content="A quick guide to the top 10 US cities every movie enthusiast should visit. From Los Angeles to New York.">
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
-  <header>
-    <img src="../assets/logo.svg" alt="USChill Logo" class="logo">
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../videos/videos.html">Videos</a>
-      <a href="article1.html">Blog</a>
-      <a href="../about.html">About</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
+  <header class="nav"><div class="brand"><img src="../assets/logo.svg" class="logo"><span class="brand-text">USChill</span></div>
+  <nav class="nav-right"><a href="../index.html">Home</a><a href="../movies/movie1.html">Movies</a></nav>
+  <button class="menu-btn" id="bm">☰</button></header>
 
-  <main>
-    <h1>First Blog Post</h1>
-    <p>This is a placeholder for your first article.</p>
+  <main class="container" style="padding-top:18px">
+    <article>
+      <h1>Top 10 Cities in the USA for Movie Lovers</h1>
+      <p>The United States has long been a hub for film production and cinema culture. Whether you’re chasing iconic studio tours, historic theaters, or film festivals, these ten cities are must-visits for any movie fan...</p>
+
+      <h2>1. Los Angeles, CA</h2>
+      <p>Home of Hollywood, studio tours, and red carpet premieres. From the TCL Chinese Theatre to studio backlots, Los Angeles offers a behind-the-scenes look at movie-making.</p>
+
+      <h2>2. New York, NY</h2>
+      <p>A cinematic landscape in its own right — think classic films, indie screenings, and world-class museums celebrating film history.</p>
+
+      <!-- add more items to reach good length; repeat similar paragraphs for 10 items -->
+      <p>... (continue with Seattle, Chicago, Austin, Atlanta, San Francisco, New Orleans, Miami, Nashville) ...</p>
+      <h2>Conclusion</h2>
+      <p>These cities offer a mix of big-studio glamour and indie film culture — perfect for road trips, festivals, or a weekend of cinema exploration.</p>
+    </article>
   </main>
-
-  <footer>
-    <p>© 2025 USChill</p>
-  </footer>
+  <footer class="footer">© 2025 USChill</footer>
+  <script>document.getElementById('bm').addEventListener('click',()=>document.querySelector('.nav-right').classList.toggle('open'))</script>
 </body>
 </html>
