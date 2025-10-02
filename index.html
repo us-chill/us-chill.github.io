@@ -19,15 +19,11 @@
   <meta property="og:image" content="https://us-chill.github.io/assets/img/preview.png" />
   <meta property="og:url" content="https://us-chill.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- PopAds Code (Optional) -->
-  <!-- <script type="text/javascript" src="popads-code.js"></script> -->
 </head>
-
 <body>
   <!-- 🌐 Header -->
   <header>
-    <div class="container">
+    <div class="container header-flex">
       <h1 class="logo"><a href="/">USChill</a></h1>
       <nav>
         <ul>
@@ -43,8 +39,8 @@
 
   <!-- 🦸 Hero Section -->
   <section class="hero">
-    <div class="container">
-      <h2>Welcome to USChill</h2>
+    <div class="container hero-content">
+      <h2>Welcome to <span class="primary">USChill</span></h2>
       <p>Watch movie trailers and trending viral videos from the US — updated daily.</p>
     </div>
   </section>
@@ -67,7 +63,7 @@
 
   <!-- 📝 Footer -->
   <footer>
-    <div class="container">
+    <div class="container footer-flex">
       <p>&copy; 2025 USChill. All rights reserved.</p>
       <nav>
         <a href="privacy.html">Privacy Policy</a> | 
@@ -88,9 +84,11 @@
         el.className = 'card';
         el.innerHTML = `
           <img src="${m.poster}" alt="${m.title}">
-          <h3>${m.title}</h3>
-          <p>${m.synopsis.substring(0, 80)}...</p>
-          <a href="movie/" class="btn">View Trailer</a>
+          <div class="card-content">
+            <h3>${m.title}</h3>
+            <p>${m.synopsis.substring(0, 80)}...</p>
+            <a href="movie/" class="btn">View Trailer</a>
+          </div>
         `;
         movieContainer.appendChild(el);
       });
@@ -104,8 +102,10 @@
         el.className = 'card';
         el.innerHTML = `
           <img src="${v.thumbnail}" alt="${v.title}">
-          <h3>${v.title}</h3>
-          <a href="videos/" class="btn">Watch Now</a>
+          <div class="card-content">
+            <h3>${v.title}</h3>
+            <a href="videos/" class="btn">Watch Now</a>
+          </div>
         `;
         videoContainer.appendChild(el);
       });
