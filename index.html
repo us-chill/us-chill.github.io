@@ -1,105 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nonton trailer film dan video viral terbaru. Update konten setiap hari, gratis dan cepat.">
-  <meta name="keywords" content="movie, video viral, trailer, film terbaru, streaming">
-  <meta name="author" content="Website Kamu">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="USChill - Watch trailers and trending viral videos from the US. Stay updated with the latest entertainment.">
+  <meta name="keywords" content="movie trailers, viral videos, US trending, entertainment, streaming">
+  <meta name="author" content="USChill Team">
+  <link rel="canonical" href="https://us-chill.github.io/" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>USChill - Movies & Viral Videos</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
-  <title>Home - Movie & Viral Videos</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="assets/style.css">
+  <!-- SEO & Social -->
+  <meta property="og:title" content="USChill - Movies & Viral Videos" />
+  <meta property="og:description" content="Watch trailers and trending viral videos from the US." />
+  <meta property="og:image" content="https://us-chill.github.io/assets/img/preview.png" />
+  <meta property="og:url" content="https://us-chill.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- PopAds Script -->
-  <script type="text/javascript" data-cfasync="false" src="assets/ads.js" defer></script>
+  <!-- PopAds Code (Optional) -->
+  <!-- <script type="text/javascript" src="popads-code.js"></script> -->
 </head>
-<body>
 
-  <!-- 🧭 Navbar -->
+<body>
+  <!-- 🌐 Header -->
   <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-        <img src="assets/logo.svg" alt="Logo" height="30">
-      </a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="movie/">Movies</a></li>
-        <li><a href="videos/">Videos</a></li>
-        <li><a href="blog/">Blog</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1 class="logo"><a href="/">USChill</a></h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="movie/">Movies</a></li>
+          <li><a href="videos/">Videos</a></li>
+          <li><a href="blog/">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- 🏞 Hero Section -->
+  <!-- 🦸 Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Selamat Datang di <span>Movie & Viral Videos</span></h1>
-      <p>Nikmati trailer film & video viral terbaru setiap hari 🔥</p>
-    </div>
-  </section>
-
-  <!-- 🎬 Movies Section -->
-  <section class="movies">
     <div class="container">
-      <h2>🎞️ Latest Movies</h2>
-      <div class="movie-list" id="movie-list">
-        <!-- Data movie akan dimasukkan lewat JS -->
-      </div>
+      <h2>Welcome to USChill</h2>
+      <p>Watch movie trailers and trending viral videos from the US — updated daily.</p>
     </div>
   </section>
 
-  <!-- 📹 Videos Section -->
-  <section class="videos">
+  <!-- 🎬 Latest Movies -->
+  <section class="movies-section">
     <div class="container">
-      <h2>📺 Viral Videos</h2>
-      <div class="video-list" id="video-list">
-        <!-- Data video akan dimasukkan lewat JS -->
-      </div>
+      <h2>🎬 Latest Movies</h2>
+      <div id="movie-list" class="grid"></div>
     </div>
   </section>
 
-  <!-- 📩 Footer -->
+  <!-- 📹 Trending Videos -->
+  <section class="videos-section">
+    <div class="container">
+      <h2>📹 Trending Videos</h2>
+      <div id="video-list" class="grid"></div>
+    </div>
+  </section>
+
+  <!-- 📝 Footer -->
   <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Movie & Viral Videos. All rights reserved.</p>
-      <a href="privacy.html">Privacy Policy</a>
+    <div class="container">
+      <p>&copy; 2025 USChill. All rights reserved.</p>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="sitemap.xml">Sitemap</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- 🧠 Scripts -->
-  <script src="movie/movies.js"></script>
+  <!-- 🔥 Load data from JS -->
+  <script src="movie/data.js"></script>
   <script src="videos/videos.js"></script>
   <script>
-    // Render Movie Section
-    const movieList = document.getElementById('movie-list');
+    // Render Movies
+    const movieContainer = document.getElementById('movie-list');
     if (typeof movies !== 'undefined') {
-      movies.forEach(movie => {
-        const div = document.createElement('div');
-        div.className = 'movie-item';
-        div.innerHTML = `
-          <img src="${movie.image}" alt="${movie.title}">
-          <h3>${movie.title}</h3>
-          <p>${movie.synopsis}</p>
-          <a href="${movie.trailer}" target="_blank" class="btn">Watch Trailer</a>
+      movies.slice(0, 6).forEach(m => {
+        const el = document.createElement('div');
+        el.className = 'card';
+        el.innerHTML = `
+          <img src="${m.poster}" alt="${m.title}">
+          <h3>${m.title}</h3>
+          <p>${m.synopsis.substring(0, 80)}...</p>
+          <a href="movie/" class="btn">View Trailer</a>
         `;
-        movieList.appendChild(div);
+        movieContainer.appendChild(el);
       });
     }
 
-    // Render Video Section
-    const videoList = document.getElementById('video-list');
+    // Render Videos
+    const videoContainer = document.getElementById('video-list');
     if (typeof videos !== 'undefined') {
-      videos.forEach(video => {
-        const div = document.createElement('div');
-        div.className = 'video-item';
-        div.innerHTML = `
-          <iframe src="${video.url}" frameborder="0" allowfullscreen></iframe>
-          <h3>${video.title}</h3>
+      videos.slice(0, 6).forEach(v => {
+        const el = document.createElement('div');
+        el.className = 'card';
+        el.innerHTML = `
+          <img src="${v.thumbnail}" alt="${v.title}">
+          <h3>${v.title}</h3>
+          <a href="videos/" class="btn">Watch Now</a>
         `;
-        videoList.appendChild(div);
+        videoContainer.appendChild(el);
       });
     }
   </script>
