@@ -4,25 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>USChill - Movies & Viral Videos</title>
-  <meta name="description" content="Watch trailers and trending viral videos from the US - Ultimate premium experiencble.">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="description" content="USChill - Watch trailers and trending viral videos from the US. Stay updated with the latest entertainment.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Inter:400,700&display=swap">
+  <link rel="stylesheet" href="assets/style.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 </head>
 <body>
-  <!-- Navbar -->
   <header class="navbar glass">
     <div class="nav-container">
       <a href="/" class="nav-logo">
-        <img src="assets/logo.svg"
+        <img src="assets/logo.svg" alt="USChill" height="34"><span>USChill</span>
       </a>
       <nav id="main-nav">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="movie/">Movies</a></li>
-          <li><a href="videos/">Videos</a></li>
-          <li><a href="blog/">Blog</a></li>
+          <li><a href="movie.html">Movies</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -35,10 +33,9 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-bg" poster="assets/img/hero-fallback.jpg">
-      <source src="video/videos.js" type="video/mp4">
+    <video autoplay muted loop playsinline class="hero-bg" poster="assets/images/hero-fallback.jpg">
+      <source src="assets/videos/hero-bg.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -49,29 +46,22 @@
         <span class="hero-sub">Stream. Chill. Trend. Every day.</span>
       </p>
       <div class="hero-actions">
-        <a href="movie/" class="btn btn-gradient">Explore Movies</a>
-        <a href="videos/" class="btn btn-glass">Trending Videos</a>
+        <a href="movie.html" class="btn btn-gradient">Explore Movies</a>
+        <a href="video.html" class="btn btn-glass">Trending Videos</a>
       </div>
     </div>
   </section>
 
-  <!-- Movies -->
   <section class="section">
-    <h2><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 4.5h18M3 9h18M3 13.5h18M3 18h18" stroke="url(#g1)" stroke-width="2" stroke-linecap="round"/><defs><linearGradient id="g1" x1="3" x2="21" y1="4" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#6f7bf7"/><stop offset="1" stop-color="#f857a6"/></linearGradient></defs></svg>
-      Latest Movies</h2>
+    <h2>🎬 Latest Movies</h2>
     <div class="card-grid" id="movie-list"></div>
   </section>
 
-  <!-- Videos -->
   <section class="section">
-    <h2>
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="url(#g2)" stroke-width="2"/><polygon points="10,8 16,12 10,16" fill="url(#g2)"/><defs><linearGradient id="g2" x1="7" x2="17" y1="7" y2="17" gradientUnits="userSpaceOnUse"><stop stop-color="#6f7bf7"/><stop offset="1" stop-color="#f857a6"/></linearGradient></defs></svg>
-      Trending Videos
-    </h2>
+    <h2>📹 Trending Videos</h2>
     <div class="card-grid" id="video-list"></div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-top">
       <form class="subscribe-form" onsubmit="return false;">
@@ -79,9 +69,9 @@
         <button class="btn btn-gradient" type="submit">Subscribe</button>
       </form>
       <div class="footer-social">
-        <a href="#"><img src="assets/img/ig.svg" alt="Instagram"></a>
-        <a href="#"><img src="assets/img/tw.svg" alt="Twitter"></a>
-        <a href="#"><img src="assets/img/yt.svg" alt="YouTube"></a>
+        <a href="#"><img src="assets/images/ig.svg" alt="Instagram"></a>
+        <a href="#"><img src="assets/images/tw.svg" alt="Twitter"></a>
+        <a href="#"><img src="assets/images/yt.svg" alt="YouTube"></a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -93,51 +83,6 @@
     </div>
   </footer>
 
-  <!-- JS -->
-  <script src="movie/data.js"></script>
-  <script src="videos/videos.js"></script>
-  <script>
-    // Nav toggle
-    document.getElementById('nav-toggle').onclick = () => {
-      document.getElementById('main-nav').classList.toggle('show');
-    };
-    // Dark/Light mode toggle
-    document.getElementById('mode-toggle').onclick = () => {
-      document.body.classList.toggle('dark');
-    };
-    // Render Movies
-    const movieContainer = document.getElementById('movie-list');
-    if (typeof movies !== 'undefined') {
-      movies.slice(0, 6).forEach(m => {
-        const el = document.createElement('div');
-        el.className = 'card glass';
-        el.innerHTML = `
-          <div class="card-img-wrap"><img src="${m.poster}" alt="${m.title}"></div>
-          <div class="card-content">
-            <h3>${m.title}</h3>
-            <p>${m.synopsis.substring(0, 80)}...</p>
-            <a href="movie/" class="btn btn-glass">View Trailer</a>
-          </div>
-        `;
-        movieContainer.appendChild(el);
-      });
-    }
-    // Render Videos
-    const videoContainer = document.getElementById('video-list');
-    if (typeof videos !== 'undefined') {
-      videos.slice(0, 6).forEach(v => {
-        const el = document.createElement('div');
-        el.className = 'card glass';
-        el.innerHTML = `
-          <div class="card-img-wrap"><img src="${v.thumbnail}" alt="${v.title}"></div>
-          <div class="card-content">
-            <h3>${v.title}</h3>
-            <a href="videos/" class="btn btn-glass">Watch Now</a>
-          </div>
-        `;
-        videoContainer.appendChild(el);
-      });
-    }
-  </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
