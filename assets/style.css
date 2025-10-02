@@ -125,7 +125,7 @@ body.dark .footer-bottom, body.dark .footer-top {
 @media (max-width: 900px) {
   #main-nav ul {
     flex-direction: column;
-    background: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.97);
     position: absolute;
     top: 62px;
     right: 1.2rem;
@@ -272,9 +272,6 @@ body.dark .footer-bottom, body.dark .footer-top {
   font-size: 2rem;
   font-weight: 700;
   color: var(--primary);
-  display: flex;
-  align-items: center;
-  gap: 0.45em;
   margin-bottom: 1.2rem;
 }
 
