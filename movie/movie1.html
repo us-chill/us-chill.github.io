@@ -1,34 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Action Heroes — USChill</title>
-  <meta name="description" content="Action Heroes (2024) — an action-packed film. USChill provides summary, genre, cast and review.">
-  <link rel="stylesheet" href="../assets/style.css">
-<script src="assets/ads.js" data-cfasync="false"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>USChill - Movies</title>
+  <meta name="description" content="Discover the latest and trending movies on USChill.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Inter:400,700&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
 </head>
 <body>
-  <!-- reuse header -->
-  <header class="nav">
-    <div class="brand"><img src="../assets/logo.svg" class="logo"><span class="brand-text">USChill</span></div>
-    <nav class="nav-right"><a href="../index.html">Home</a><a href="../blog/article1.html">Blog</a></nav>
-    <button class="menu-btn" id="m2">☰</button>
+  <header class="navbar glass">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">
+        <img src="assets/images/logo.svg" alt="USChill" height="34"><span>USChill</span>
+      </a>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="movie.html" class="active">Movies</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Open Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="mode-toggle" id="mode-toggle" aria-label="Toggle Mode">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="M12 3v2m6.364 1.636-1.414 1.414m4.242 6.364h-2M17.657 17.657l-1.414-1.414M12 19v2m-6.364-1.636 1.414-1.414M3 12H5m1.343-6.364L7.757 7.05" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main class="container">
-    <article style="margin-top:18px">
-      <h1>Action Heroes (2024)</h1>
-      <img src="https://picsum.photos/600/900?random=11" style="width:100%;border-radius:8px;margin:12px 0" alt="">
-      <p><strong>Genre:</strong> Action, Adventure — <strong>Year:</strong> 2024</p>
-      <h2>Synopsis</h2>
-      <p>This high-octane blockbuster follows a team of unlikely heroes as they race to stop a global threat. Packed with explosive stunts, thrilling chases, and surprising heart, Action Heroes delivers non-stop entertainment.</p>
-      <h2>Review</h2>
-      <p>USChill's review: The film leans heavily on spectacle but delivers charismatic performances and memorable set-pieces. Fans of classic action will find it satisfying.</p>
-    </article>
-  </main>
+  <section class="section">
+    <h1 class="page-title gradient-text">🎬 Movies</h1>
+    <p class="section-desc">Discover a curated collection of the latest and most popular movies. Click on a card to watch the trailer and get more info.</p>
+    <div class="card-grid" id="movie-list"></div>
+  </section>
 
-  <footer class="footer">© 2025 USChill</footer>
+  <footer>
+    <div class="footer-top">
+      <form class="subscribe-form" onsubmit="return false;">
+        <input type="email" placeholder="Subscribe for updates" required>
+        <button class="btn btn-gradient" type="submit">Subscribe</button>
+      </form>
+      <div class="footer-social">
+        <a href="#"><img src="assets/images/ig.svg" alt="Instagram"></a>
+        <a href="#"><img src="assets/images/tw.svg" alt="Twitter"></a>
+        <a href="#"><img src="assets/images/yt.svg" alt="YouTube"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 USChill. All rights reserved.</span>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="sitemap.xml">Sitemap</a>
+      </nav>
+    </div>
+  </footer>
 
-  <script>document.getElementById('m2').addEventListener('click',()=>document.querySelector('.nav-right').classList.toggle('open'))</script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
