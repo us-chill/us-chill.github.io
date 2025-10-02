@@ -1,96 +1,107 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>USChill — Movies & News (USA)</title>
-  <meta name="description" content="USChill — news, movie picks and entertainment from the United States. Latest movies, reviews, and trending lists.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nonton trailer film dan video viral terbaru. Update konten setiap hari, gratis dan cepat.">
+  <meta name="keywords" content="movie, video viral, trailer, film terbaru, streaming">
+  <meta name="author" content="Website Kamu">
+
+  <title>Home - Movie & Viral Videos</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/style.css">
-<script src="assets/ads.js" data-cfasync="false"></script>
+
+  <!-- PopAds Script -->
+  <script type="text/javascript" data-cfasync="false" src="assets/ads.js" defer></script>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header class="nav">
-    <div class="brand">
-      <img src="assets/logo.svg" alt="USChill logo" class="logo">
-      <span class="brand-text">USChill</span>
-    </div>
 
-    <nav class="nav-right" id="navRight">
-      <a href="index.html">Home</a>
-      <a href="movie/movie1.html">Movies</a>
-      <a href="blog/article1.html">Blog</a>
-      <a href="about.html">About</a>
-      <input class="search" placeholder="Search...">
+  <!-- 🧭 Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.svg" alt="Logo" height="30">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="movie/">Movies</a></li>
+        <li><a href="videos/">Videos</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
   </header>
 
-  <script type="text/javascript">
-	atOptions = {
-		'key' : 'c453f174a04b15ad3f1d49894b8bc5a0',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/c453f174a04b15ad3f1d49894b8bc5a0/invoke.js"></script>
-
-  <!-- HERO -->
+  <!-- 🏞 Hero Section -->
   <section class="hero">
-    <div class="hero-inner">
-      <h1>USChill — Your USA entertainment feed</h1>
-     <p>Latest Hollywood picks, city guides and trending stories from across the United States.</p>
-      <a class="cta" href="movie/movie1.html">Browse Movies</a>
+    <div class="hero-content">
+      <h1>Selamat Datang di <span>Movie & Viral Videos</span></h1>
+      <p>Nikmati trailer film & video viral terbaru setiap hari 🔥</p>
     </div>
   </section>
 
-  <!-- LATEST -->
-  <main class="container">
-    <h2>Latest Picks</h2>
-    <div class="grid">
-      <!-- card 1 -->
-      <article class="card">
-        <a href="movie/movie1.html"><img src="https://picsum.photos/400/600?random=1" alt="Poster 1"></a>
-        <h3><a href="movie/movie1.html">Action Heroes</a></h3>
-        <p class="meta">Action · 2024</p>
-      </article>
-
-      <!-- card 2 -->
-      <article class="card">
-        <a href="movie/movie1.html"><img src="https://picsum.photos/400/600?random=2" alt="Poster 2"></a>
-        <h3><a href="movie/movie1.html">Love Untold</a></h3>
-        <p class="meta">Romance · 2023</p>
-      </article>
-
-      <!-- more cards -->
-      <article class="card">
-        <a href="movie/movie1.html"><img src="https://picsum.photos/400/600?random=3" alt="Poster 3"></a>
-        <h3><a href="movie/movie1.html">Comedy Night</a></h3>
-        <p class="meta">Comedy · 2022</p>
-      </article>
-
-      <article class="card">
-        <a href="movie/movie1.html"><img src="https://picsum.photos/400/600?random=4" alt="Poster 4"></a>
-        <h3><a href="movie/movie1.html">The Escape</a></h3>
-        <p class="meta">Thriller · 2021</p>
-      </article>
+  <!-- 🎬 Movies Section -->
+  <section class="movies">
+    <div class="container">
+      <h2>🎞️ Latest Movies</h2>
+      <div class="movie-list" id="movie-list">
+        <!-- Data movie akan dimasukkan lewat JS -->
+      </div>
     </div>
-  </main>
+  </section>
 
-  <footer class="footer">
-    <p>© 2025 USChill — About · Privacy · Contact</p>
+  <!-- 📹 Videos Section -->
+  <section class="videos">
+    <div class="container">
+      <h2>📺 Viral Videos</h2>
+      <div class="video-list" id="video-list">
+        <!-- Data video akan dimasukkan lewat JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 📩 Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Movie & Viral Videos. All rights reserved.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
   </footer>
 
+  <!-- 🧠 Scripts -->
+  <script src="movie/data.js"></script>
+  <script src="videos/data.js"></script>
   <script>
-    // Mobile menu toggle
-    document.getElementById('menuBtn').addEventListener('click', function(){
-      document.getElementById('navRight').classList.toggle('open');
-    });
+    // Render Movie Section
+    const movieList = document.getElementById('movie-list');
+    if (typeof movies !== 'undefined') {
+      movies.forEach(movie => {
+        const div = document.createElement('div');
+        div.className = 'movie-item';
+        div.innerHTML = `
+          <img src="${movie.image}" alt="${movie.title}">
+          <h3>${movie.title}</h3>
+          <p>${movie.synopsis}</p>
+          <a href="${movie.trailer}" target="_blank" class="btn">Watch Trailer</a>
+        `;
+        movieList.appendChild(div);
+      });
+    }
+
+    // Render Video Section
+    const videoList = document.getElementById('video-list');
+    if (typeof videos !== 'undefined') {
+      videos.forEach(video => {
+        const div = document.createElement('div');
+        div.className = 'video-item';
+        div.innerHTML = `
+          <iframe src="${video.url}" frameborder="0" allowfullscreen></iframe>
+          <h3>${video.title}</h3>
+        `;
+        videoList.appendChild(div);
+      });
+    }
   </script>
 </body>
 </html>
